@@ -10,6 +10,7 @@ import { InvoiceDialogInformationComponent } from './components/invoice-dialog-i
 import { InvoiceDialogPaymentsComponent } from './components/invoice-dialog-payments/invoice-dialog-payments.component';
 import { InvoiceDialogInformationDesktopComponent } from './components/invoice-dialog-information/invoice-dialog-information-desktop/invoice-dialog-information-desktop.component';
 import { InvoiceDialogInformationMobileComponent } from './components/invoice-dialog-information/invoice-dialog-information-mobile/invoice-dialog-information-mobile.component';
+import { ToggleComponent } from './components/toggle/toggle.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { InvoiceDialogInformationMobileComponent } from './components/invoice-di
     InvoiceDialogInformationComponent,
     InvoiceDialogPaymentsComponent,
     InvoiceDialogInformationDesktopComponent,
-    InvoiceDialogInformationMobileComponent 
+    InvoiceDialogInformationMobileComponent,
+    ToggleComponent 
   ],
   imports: [
     BrowserModule,
