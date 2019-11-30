@@ -1,20 +1,29 @@
+#invoice-dialog-header {
+	display: flex;
+	flex-direction: row;
+	background-color: #dfdfe3;
+}
 
-/* #side-menu {
-	width: 240px;
+#invoice-dialog-header-title {
+	margin-left: 160px;
+}
+
+#invoice-dialog-sidebar {
+	width: 120px;
 	box-shadow: 1px 0px 10px rgba(0, 0, 0, 0.0276834);
   position: absolute;
   left: 0%;
   right: 0%;
   top: 0%;
 	bottom: 0%;
-} */
+}
 
-/* #right-content {
+#invoice-dialog-content {
 	position: absolute;
-  left: 240px;
+  left: 120px;
   right: 0;
   bottom: 0;
   top: 0;
   background: #F4F6F9;
 	padding: 22px 50px 22px 50px;
-} */
+}

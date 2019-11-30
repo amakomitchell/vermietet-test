@@ -1,9 +1,10 @@
-<div id="invoice-container">
-	<div class="d-flex bd-highlight mb-3">
+<div class="invoices-container">
+	<div class="d-flex bd-highlight mb-3 align-items-center">
 		<div class="mr-auto p-2 bd-highlight" id="invoice-header-text">Invoices List:</div>
 		<div class="p-2 bd-highlight">
-			<button id="button-wrapper">
+			<button type="button" id="button-wrapper" data-toggle="modal" data-target="#staticBackdrop">
 				<span id="button-label">Add new invoice</span>
+				<app-invoice-dialog></app-invoice-dialog>
 			</button>
 		</div>
 	</div>
