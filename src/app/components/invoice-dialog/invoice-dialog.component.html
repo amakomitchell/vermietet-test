@@ -1,8 +1,29 @@
 <div [ngClass]="{'d-none': !isVisible, 'd-flex flex-column align-items-center justify-content-center position-absolute dialog-wrapper': isVisible}">
-	<!-- <button (click)="closeDialog()">
-		Close Me
-	</button> -->
-	<div class="dialog-content">
-
+	<div class="dialog-body d-flex flex-column">
+		<div class="dialog-header d-flex flex-column align-items-center justify-content-center position-relative w-100">
+			<div>
+				Invoice Dialog
+			</div>
+			<div (click)="closeDialog()" class="close-dialog-icon d-flex flex-column align-items-center justify-content-center position-absolute h-100 pr-3">
+				X
+			</div>
+		</div>
+		<div class="dialog-content d-flex flex-1 flex-column flex-lg-row">
+			<!-- side bar -->
+			<div class="d-none d-lg-flex flex-lg-column h-100 side-bar border-right">
+				<div class="side-bar-item text-left py-3 pl-3 pointer" *ngFor="let item of sideMenuItems; let i = index" (click)="switchDialogContent(i)">
+					{{item}}
+				</div>
+			</div>
+			<!-- main content -->
+			<div class="d-flex flex-1 h-100 w-100 main-content">
+				<div *ngIf="activeDialogContent == 0">
+					<app-invoice-information></app-invoice-information>
+				</div>
+				<div *ngIf="activeDialogContent == 1">
+					<app-invoice-payments></app-invoice-payments>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>

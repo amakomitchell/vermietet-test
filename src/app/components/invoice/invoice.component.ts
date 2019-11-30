@@ -33,10 +33,9 @@ export class InvoiceComponent implements OnInit {
 	];
 	ngOnInit() {}
 
-	showDialog = false; // () => {}
+	showDialog = false;
 
 	toggleDialog = () => {
-		console.log('Toggling Dialog...', this);
 		this.showDialog = !this.showDialog;
 	}
 }

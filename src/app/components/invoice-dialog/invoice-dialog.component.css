@@ -6,15 +6,38 @@
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-.dialog-content {
+.dialog-body {
   background-color: #ffffff;
   height: 100vh;
   width: 100vw;
 }
 
 @media only screen and (min-width: 920px) {
-  .dialog-content {
+  .dialog-body {
     height: 80%;
     width: 75%;
   }
+}
+
+.dialog-header {
+  height: 60px;
+  background-color: #cccccc;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.close-dialog-icon {
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+.side-bar {
+  width: 30%;
+}
+
+.side-bar-item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.main-content {
 }
