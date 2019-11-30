@@ -1,29 +1,20 @@
-#invoice-dialog-header {
-	display: flex;
-	flex-direction: row;
-	background-color: #dfdfe3;
-}
-
-#invoice-dialog-header-title {
-	margin-left: 160px;
-}
-
-#invoice-dialog-sidebar {
-	width: 120px;
-	box-shadow: 1px 0px 10px rgba(0, 0, 0, 0.0276834);
-  position: absolute;
-  left: 0%;
-  right: 0%;
-  top: 0%;
-	bottom: 0%;
-}
-
-#invoice-dialog-content {
-	position: absolute;
-  left: 120px;
-  right: 0;
-  bottom: 0;
+.dialog-wrapper {
   top: 0;
-  background: #F4F6F9;
-	padding: 22px 50px 22px 50px;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.dialog-content {
+  background-color: #ffffff;
+  height: 100vh;
+  width: 100vw;
+}
+
+@media only screen and (min-width: 920px) {
+  .dialog-content {
+    height: 80%;
+    width: 75%;
+  }
 }

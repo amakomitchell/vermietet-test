@@ -1,41 +1,23 @@
 .invoices-container {
 	flex: 1;
 	height: 100vh;
-	padding: 11px 25px 11px 25px;
-	width: 100vh;
+	/* padding: 11px 25px 11px 25px; */
 }
 
 @media only screen and (min-width: 992px) {
 	.invoices-container {
-		width: calc(100vw - 240px);
 		padding: 22px 50px 22px 50px;
 	}
   }
 
-#notif-container {
-	width: 30px;
-	height: 30px;
-	background: #213F7D;
-	opacity: 0.5;
-	border-radius: 100%;
-	margin-bottom: 32px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-  
-#notif-icon {
-	color: #FFFFFF;
-	height: 20px;
-}
 
-#button-wrapper {
+.button-wrapper {
 	background: linear-gradient(270deg, #39CDCC -21.5%, #39CDCC -21.48%, #0CA8E5 174.75%);
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
 	border-radius: 5px;
 }
 
-#button-label {
+.button-label {
 	font-family: Work Sans;
 	font-style: normal;
 	font-weight: 600;
@@ -47,7 +29,7 @@
 	color: #FFFFFF;
 }
 
-#invoice-header-text {
+.invoice-header-text {
 	font-family: Work Sans;
 	font-style: normal;
 	font-weight: 500;

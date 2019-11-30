@@ -1,13 +1,16 @@
-<div class="invoices-container">
+<div class="invoices-container vw-100">
 	<div class="d-flex bd-highlight mb-3 align-items-center">
-		<div class="mr-auto p-2 bd-highlight" id="invoice-header-text">Invoices List:</div>
+		<div class=" invoice-header-text mr-auto p-2 bd-highlight">Invoices List:</div>
 		<div class="p-2 bd-highlight">
-			<button type="button" id="button-wrapper" data-toggle="modal" data-target="#staticBackdrop">
-				<span id="button-label">Add new invoice</span>
+			<!-- <button type="button" class="button-wrapper" data-toggle="modal" data-target="#staticBackdrop"> -->
+			<button type="button" class="button-wrapper" (click)="toggleDialog()">
+				<span class="button-label">Add new invoice</span>
 				<app-invoice-dialog></app-invoice-dialog>
 			</button>
 		</div>
 	</div>
-	<app-invoice-table-header></app-invoice-table-header>
-	<app-invoice-list-items></app-invoice-list-items>
+	<div *ngFor="let invoice of rows">
+		<app-invoice-list-item [invoice]="invoice"></app-invoice-list-item>
+	</div>
+	<app-invoice-dialog [isVisible]="showDialog" [closeDialog]="toggleDialog"></app-invoice-dialog>
 </div>

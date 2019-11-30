@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
 	selector: 'app-invoice-dialog',
@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./invoice-dialog.component.css']
 })
 export class InvoiceDialogComponent implements OnInit {
-	ngOnInit() {
-		
-	}
+	@Input() isVisible: boolean;
+	@Input() closeDialog: Function;
+
+	ngOnInit() {}
 }
