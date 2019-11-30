@@ -16,13 +16,9 @@
 				</div>
 			</div>
 			<!-- main content -->
-			<div class="d-flex flex-1 h-100 w-100 main-content">
-				<div *ngIf="activeDialogContent == 0">
-					<app-invoice-information></app-invoice-information>
-				</div>
-				<div *ngIf="activeDialogContent == 1">
-					<app-invoice-payments></app-invoice-payments>
-				</div>
+			<div class="d-flex flex-1 flex-column main-content">
+				<app-invoice-dialog-information *ngIf="activeDialogContent == 0"></app-invoice-dialog-information>
+				<app-invoice-dialog-payments *ngIf="activeDialogContent == 1"></app-invoice-dialog-payments>
 			</div>
 		</div>
 	</div>
