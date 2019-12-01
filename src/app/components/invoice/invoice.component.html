@@ -9,8 +9,8 @@
 			</button>
 		</div>
 	</div>
-	<div *ngFor="let invoice of rows">
+	<div *ngFor="let invoice of invoices">
 		<app-invoice-list-item [invoice]="invoice"></app-invoice-list-item>
 	</div>
-	<app-invoice-dialog [isVisible]="showDialog" [closeDialog]="toggleDialog"></app-invoice-dialog>
+	<app-invoice-dialog [closeDialog]="toggleDialog"></app-invoice-dialog>
 </div>

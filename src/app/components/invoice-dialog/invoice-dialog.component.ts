@@ -1,4 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {select, Store} from '@ngrx/store'; 
+import { Subscription } from 'rxjs';
+import { InvoiceState } from 'src/app/invoice.reducer';
 
 @Component({
 	selector: 'app-invoice-dialog',
@@ -6,8 +9,16 @@ import { Component, OnInit, Input } from '@angular/core';
 	styleUrls: ['./invoice-dialog.component.css']
 })
 export class InvoiceDialogComponent implements OnInit {
-	@Input() isVisible: boolean;
 	@Input() closeDialog: Function;
+
+	private subscription: Subscription;
+	showDialog: boolean = false;
+ 
+  constructor(private store: Store<{ appState: InvoiceState }>) {
+		this.subscription = store.pipe(select('appState')).subscribe((data) => {
+			this.showDialog = data.showDialog;
+		});
+	}
 
 	/* component properties */
 	activeDialogContent = 0;

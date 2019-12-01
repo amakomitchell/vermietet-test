@@ -1,4 +1,8 @@
 import { Component, OnInit } from "@angular/core";
+import { select, Store } from '@ngrx/store'; 
+import { Subscription } from 'rxjs';
+import { InvoiceState, Invoice } from 'src/app/invoice.reducer';
+import { ToggleInvoiceDialog } from 'src/app/invoice.actions';
 
 @Component({
   selector: 'app-invoice',
@@ -7,35 +11,23 @@ import { Component, OnInit } from "@angular/core";
 })
 
 export class InvoiceComponent implements OnInit {
-	rows: any[] = [
-		{
-			id: 1,
-			date: '2018-01-01',
-			title: 'Rent January',
-			amount: '500 EUR',
-			iban: 'IBAN:DE-01-1234...',
-			// status: 1,
-		}, {
-			id: 11,
-			date: '2018-02-03',
-			title: 'Rent February',
-			amount: '500 EUR',
-			iban: 'IBAN:DE-01-1234...',
-			// status: 0,
-		}, {
-			id: 21,
-			date: '2018-03-02',
-			title: 'Rent March',
-			amount: '500 EUR',
-			iban: 'IBAN:DE-01-1234...',
-			// status: 1,
-		}
-	];
+	
+	private subscription: Subscription;
+	invoices: Invoice[] = [];
+
+	constructor(private store: Store<{ appState: InvoiceState }>) {
+		this.subscription = store.pipe(select('appState')).subscribe((data) => {
+			this.invoices = data.invoiceList;
+		});
+	}
+	
 	ngOnInit() {}
 
-	showDialog = false;
+	ngOnDestroy() {
+		this.subscription.unsubscribe();
+	}
 
-	toggleDialog = () => {
-		this.showDialog = !this.showDialog;
+	toggleDialog() {
+		this.store.dispatch(ToggleInvoiceDialog());
 	}
 }
