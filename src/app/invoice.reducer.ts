@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { ToggleInvoiceDialog } from './invoice.actions';
+import { ToggleInvoiceDialog, UpdateInvoiceFormDataTitle, UpdateInvoiceFormDataDate, UpdateInvoiceFormDataAmount, CreateInvoice } from './invoice.actions';
 
 export interface Invoice {
 	id?: number;
@@ -9,7 +9,9 @@ export interface Invoice {
 	iban: string;
 }
 
-export interface InvoiceForm extends Invoice {}
+export interface InvoiceForm extends Invoice {
+	retrieveFromAccount: boolean;
+}
 
 export interface InvoiceState {
 	invoiceList: Invoice[];
@@ -32,7 +34,8 @@ export const initialState: InvoiceState = {
 		date: '',
 		title: '',
 		amount: 0,
-		iban: ''
+		iban: 'IBAN:DE-01-1234...',
+		retrieveFromAccount: false
 	},
 	showDialog: false
 };
@@ -43,6 +46,49 @@ const _InvoiceReducer = createReducer(
 		return {
 			...state,
 			showDialog: !state.showDialog
+		}
+	}),
+	on(UpdateInvoiceFormDataTitle, (state, { title }) => {
+		return {
+			...state,
+			invoiceForm: {
+				...state.invoiceForm,
+				title,
+			}
+		}
+	}),
+	on(UpdateInvoiceFormDataDate, (state, { date }) => {
+		return {
+			...state,
+			invoiceForm: {
+				...state.invoiceForm,
+				date,
+			}
+		}
+	}),
+	on(UpdateInvoiceFormDataAmount, (state, { amount }) => {
+		return {
+			...state,
+			invoiceForm: {
+				...state.invoiceForm,
+				amount,
+			}
+		}
+	}),
+	on(CreateInvoice, (state) => {
+		const { invoiceList } = state;
+		const lastInvoice = invoiceList[invoiceList.length - 1];
+		return {
+			...state,
+			invoiceList: [
+				...state.invoiceList,
+				{
+					...state.invoiceForm,
+					id: lastInvoice.id + 1,
+				}
+			],
+			invoiceForm: initialState.invoiceForm,
+	   showDialog: false
 		}
 	})
 );

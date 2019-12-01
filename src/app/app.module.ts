@@ -13,8 +13,10 @@ import { InvoiceDialogInformationDesktopComponent } from './components/invoice-d
 import { InvoiceDialogInformationMobileComponent } from './components/invoice-dialog-information/invoice-dialog-information-mobile/invoice-dialog-information-mobile.component';
 import { ToggleComponent } from './components/toggle/toggle.component';
 
-import { StoreModule } from '@ngrx/store'; 
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { InvoiceReducer } from './invoice.reducer';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,10 @@ import { InvoiceReducer } from './invoice.reducer';
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot({ appState: InvoiceReducer }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+      logOnly: environment.production, // Restrict extension to log-only mode
+    }),
     FontAwesomeModule
   ],
   providers: [],

@@ -3,22 +3,39 @@
 		<div class="flex-1 text-right">
 			Date
 		</div>
-		<input type="date" class="form-control flex-2 ml-4" />
+		<input 
+			type="date" 
+			class="form-control flex-2 ml-4"
+			value="{{invoiceFormData.date}}" 
+			(change)="dateChange($event)"
+		/>
 	</div>
 	<div class="d-flex flex-row align-items-center w-50 mb-4">
 		<div class="flex-1 text-right">
-			Subject
+			Title
 		</div>
-		<input type="text" class="form-control flex-2 ml-4" placeholder="Subject">
+		<input
+			type="text"
+			class="form-control flex-2 ml-4"
+			placeholder="Subject"
+			value="{{invoiceFormData.title}}"
+			(keyup)="titleChange($event)"
+		/>
 	</div>
-	<app-toggle [checked]="toggleChcked"></app-toggle>
+	<app-toggle [checked]="invoiceFormData.retrieveFromAccount"></app-toggle>
 	<div class="d-flex flex-row align-items-center w-50 mb-4">
 		<div class="flex-1 text-right">
 			Amount
 		</div>
-		<input type="text" class="form-control flex-2 ml-4" placeholder="Amount">
+		<input 
+			type="text" 
+			class="form-control flex-2 ml-4" 
+			placeholder="Amount"
+			value="{{invoiceFormData.amount}}"
+			(keyup)="amountChange($event)"
+		/>
 	</div>
 	<div class="d-flex flex-row align-items-center w-50 mb-4">
-		<button type="button" class="primary flex-2 ml-4">Done</button>
+		<button type="button" class="primary flex-2 ml-4" [disabled]="invoiceFormData.amount < 1" (click)="createNewInvoice()">Done</button>
 	</div>
 </div>
