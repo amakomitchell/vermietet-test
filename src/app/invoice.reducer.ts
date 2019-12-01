@@ -33,7 +33,7 @@ export const initialState: InvoiceState = {
 	invoiceForm: {
 		date: '',
 		title: '',
-		amount: 0,
+		amount: null,
 		iban: 'IBAN:DE-01-1234...',
 		retrieveFromAccount: false
 	},

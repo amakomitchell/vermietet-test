@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import {select, Store} from '@ngrx/store'; 
 import { Subscription } from 'rxjs';
 import { InvoiceState, InvoiceForm } from 'src/app/invoice.reducer';
@@ -29,7 +29,7 @@ export class InvoiceDialogInformationDesktopComponent {
 	}
 
 	amountChange(event: any) {
-		this.store.dispatch(UpdateInvoiceFormDataAmount({ amount: event.target.value || 0 }));
+		this.store.dispatch(UpdateInvoiceFormDataAmount({ amount: event.target.value || null }));
 	}
 
 	createNewInvoice() {
