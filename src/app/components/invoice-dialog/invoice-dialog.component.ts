@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {select, Store} from '@ngrx/store'; 
 import { Subscription } from 'rxjs';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { InvoiceState } from 'src/app/invoice.reducer';
 
 @Component({
@@ -13,6 +14,7 @@ export class InvoiceDialogComponent implements OnInit {
 
 	private subscription: Subscription;
 	showDialog: boolean = false;
+	closeIcon = faTimes;
  
   constructor(private store: Store<{ appState: InvoiceState }>) {
 		this.subscription = store.pipe(select('appState')).subscribe((data) => {

@@ -19,10 +19,13 @@
     "@angular/platform-browser": "~8.2.11",
     "@angular/platform-browser-dynamic": "~8.2.11",
     "@angular/router": "~8.2.11",
+    "@fortawesome/angular-fontawesome": "^0.6.0-alpha.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@ngrx/store": "^8.5.2",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
+    "uninstall": "0.0.0",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
