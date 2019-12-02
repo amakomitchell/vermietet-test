@@ -1,27 +1,45 @@
 # VermietetTest
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.13.
+This is a simple invoice project that allows customers to be able to view, add, edit and delete invoices (However, invoice can be viewed and can be added but due to time contigences invoice edit and delete has not been implemented but will be implemented later). Invoices can be added by retrieving the amount from the connected bank account (a bank account must have been connected to be able to use the dashboard, in this project it was handled with state) and was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.13.
 
-## Development server
+## Technologies Used
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Angular 8
+Bootstrap 4
 
-## Code scaffolding
+## Get Started
+### Clone the repo
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+git clone https://github.com/amakomitchell/vermietet-test.git
+cd vermietet-test
 
-## Build
+### Install npm packages
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Install the npm packages described in the package.json and verify that it works:
+npm install
+ng serve
+The ng serve command builds (compiles TypeScript and copies assets) the application into dist/, watches for changes to the source files. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Running unit tests
+Shut it down manually with Ctrl-C.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### npm scripts
 
-## Running end-to-end tests
+These are the most useful commands defined in package.json:
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+npm start - runs the TypeScript compiler, asset copier, and a server at the same time, all three in "watch mode".
+npm run build - runs the TypeScript compiler and asset copier once.
+npm run build:watch - runs the TypeScript compiler and asset copier in "watch mode"; when changes occur to source files, they will be recompiled or copied into dist/.
+npm run lint - runs tslint on the project files.
+npm run serve - runs lite-server.
+These are the test-related scripts:
+
+ng test - Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+ng e2e - Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+npm run ci - cleans, lints, and builds the application and runs Intern tests (both unit and functional) one time.
 
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## License
+This project is licensed under the MIT License - see the LICENSE.md file for details
