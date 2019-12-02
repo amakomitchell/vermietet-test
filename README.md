@@ -4,20 +4,24 @@ This is a simple invoice project that allows customers to be able to view, add, 
 
 ## Technologies Used
 
-Angular 8
-Bootstrap 4
+* Angular 8
+* Bootstrap 4
 
 ## Get Started
 ### Clone the repo
 
-git clone https://github.com/amakomitchell/vermietet-test.git
-cd vermietet-test
+* git clone https://github.com/amakomitchell/vermietet-test.git
+
+* cd vermietet-test
 
 ### Install npm packages
 
 Install the npm packages described in the package.json and verify that it works:
+
 npm install
+
 ng serve
+
 The ng serve command builds (compiles TypeScript and copies assets) the application into dist/, watches for changes to the source files. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 Shut it down manually with Ctrl-C.
@@ -27,14 +31,21 @@ Shut it down manually with Ctrl-C.
 These are the most useful commands defined in package.json:
 
 npm start - runs the TypeScript compiler, asset copier, and a server at the same time, all three in "watch mode".
+
 npm run build - runs the TypeScript compiler and asset copier once.
+
 npm run build:watch - runs the TypeScript compiler and asset copier in "watch mode"; when changes occur to source files, they will be recompiled or copied into dist/.
+
 npm run lint - runs tslint on the project files.
+
 npm run serve - runs lite-server.
+
 These are the test-related scripts:
 
 ng test - Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
 ng e2e - Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
 npm run ci - cleans, lints, and builds the application and runs Intern tests (both unit and functional) one time.
 
 ## Further help
@@ -42,4 +53,5 @@ npm run ci - cleans, lints, and builds the application and runs Intern tests (bo
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 ## License
+
 This project is licensed under the MIT License - see the LICENSE.md file for details
