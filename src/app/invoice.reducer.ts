@@ -1,5 +1,11 @@
 import { createReducer, on } from '@ngrx/store';
-import { ToggleInvoiceDialog, UpdateInvoiceFormDataTitle, UpdateInvoiceFormDataDate, UpdateInvoiceFormDataAmount, CreateInvoice } from './invoice.actions';
+import { 
+	ToggleInvoiceDialog, 
+	UpdateInvoiceFormDataTitle, 
+	UpdateInvoiceFormDataDate, 
+	UpdateInvoiceFormDataAmount, 
+	CreateInvoice,
+} from './invoice.actions';
 
 export interface Invoice {
 	id?: number;
@@ -90,7 +96,7 @@ const _InvoiceReducer = createReducer(
 			invoiceForm: initialState.invoiceForm,
 	   showDialog: false
 		}
-	})
+	}),
 );
 
 export function InvoiceReducer(state: InvoiceState, action: any) {

@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
+import { Store } from '@ngrx/store';
+import { InvoiceState } from 'src/app/invoice.reducer';
 
 @Component({
   selector: 'app-invoice-list-item',
@@ -9,5 +11,9 @@ import { Component, OnInit, Input } from "@angular/core";
 export class InvoiceListItemComponent implements OnInit {
 	@Input() invoice: object;
 
+	constructor(private store: Store<{ appState: InvoiceState }>) {
+
+	}
 	ngOnInit() {}
+
 }
